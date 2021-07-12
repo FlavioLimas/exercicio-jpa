@@ -1,5 +1,8 @@
 package modelo.basico;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Usuario {
     private Long id;
     private String nome;
