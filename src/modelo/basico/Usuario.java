@@ -10,5 +10,8 @@ public class Usuario {
         this.email = email;
     }
 
+    public Usuario() {
+    }
+
     
 }
