@@ -10,6 +10,7 @@ public class ObterUsuario {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicios-jpa");
         EntityManager em = emf.createEntityManager();
 
-        
+        em.close();
+        emf.close();
     }
 }
