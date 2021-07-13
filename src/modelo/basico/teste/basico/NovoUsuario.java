@@ -18,5 +18,6 @@ public class NovoUsuario {
         em.persist(novoUsuario);
 
         em.close();
+        emf.close();
     }
 }
