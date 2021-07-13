@@ -15,7 +15,9 @@ public class NovoUsuario {
         EntityManager em = emf.createEntityManager();
 
         Usuario novoUsuario = new Usuario("Djalma", "djalma@lanche.com.br");
+        em.getTransaction().begin();
         em.persist(novoUsuario);
+        em.getTransaction().commit();
 
         em.close();
         emf.close();
