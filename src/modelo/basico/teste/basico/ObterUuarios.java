@@ -14,6 +14,7 @@ public class ObterUuarios {
 
         String hql = "SELECT u FROM Usuario u";
         TypedQuery<Usuario> query = entityManager.createQuery(hql, Usuario.class);
+        query.setMaxResults(5);
 
         entityManager.close();
         entityManagerFactory.close();
