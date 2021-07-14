@@ -12,6 +12,8 @@ public class ObterUuarios {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("exercicios-jpa");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        String hql = "SELECT u FROM Usuario u";
+        TypedQuery<Usuario> query = entityManager.createQuery(hql, Usuario.class);
 
         entityManager.close();
         entityManagerFactory.close();
