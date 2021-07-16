@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import modelo.basico.Usuario;
+
 public class AlterarUsuario1 {
 
     public static void main(String[] args) {
@@ -11,6 +13,8 @@ public class AlterarUsuario1 {
         EntityManager entityManager = eManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
+
+        Usuario usuario = entityManager.find(Usuario.class, 7L);
 
         entityManager.getTransaction().commit();
 
