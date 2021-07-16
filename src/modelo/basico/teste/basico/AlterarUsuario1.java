@@ -15,7 +15,9 @@ public class AlterarUsuario1 {
         entityManager.getTransaction().begin();
 
         Usuario usuario = entityManager.find(Usuario.class, 7L);
-
+        usuario.setNome("Leonardo");
+        usuario.setEmail("leonardo@lanche.com.br");
+        entityManager.merge(usuario);
         entityManager.getTransaction().commit();
 
         entityManager.close();
