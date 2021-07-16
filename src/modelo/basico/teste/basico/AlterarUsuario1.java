@@ -10,6 +10,10 @@ public class AlterarUsuario1 {
         EntityManagerFactory eManagerFactory = Persistence.createEntityManagerFactory("exercicios-jpa");
         EntityManager entityManager = eManagerFactory.createEntityManager();
 
+        entityManager.getTransaction().begin();
+
+        entityManager.getTransaction().commit();
+
         entityManager.close();
         eManagerFactory.close();
     }
