@@ -1,8 +1,11 @@
 package infra;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 public class DAO<E> {
 
@@ -49,6 +52,18 @@ public class DAO<E> {
     public DAO<E> incluirAtomico(E entidade) {
         em.persist(entidade);
         return this.abrirTransacao().incluir(entidade).fecharTransacao();
+    }
+
+    public List<E> obterTodos(int qtd, int deslocamento) {
+        if (classe == null) {
+            throw new UnsupportedOperationException("Classe nula");
+        }
+
+        String jpql = "SELECT e FROM " + classe.getName() + " e";
+        TypedQuery<E> query = em.createQuery(jpql, classe);
+        query.setMaxResults(qtd);
+        query.setFirstResult(deslocamento);
+        return query.getResultList();
     }
     
 }
