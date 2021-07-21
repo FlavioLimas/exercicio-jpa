@@ -48,7 +48,7 @@ public class DAO<E> {
 
     public DAO<E> incluirAtomico(E entidade) {
         em.persist(entidade);
-        return this;
+        return this.abrirTransacao().incluir(entidade).fecharTransacao();
     }
     
 }
