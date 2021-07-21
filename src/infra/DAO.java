@@ -40,5 +40,10 @@ public class DAO<E> {
         em.getTransaction().commit();
         return this;
     }
+
+    public DAO<E> incluir(E entidade) {
+        em.persist(entidade);
+        return this;
+    }
     
 }
