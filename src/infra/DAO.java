@@ -35,5 +35,10 @@ public class DAO<E> {
         em.getTransaction().begin();
         return this;
     }
+
+    public DAO<E> fecharTransacao() {
+        em.getTransaction().commit();
+        return this;
+    }
     
 }
