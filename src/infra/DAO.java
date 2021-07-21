@@ -45,5 +45,10 @@ public class DAO<E> {
         em.persist(entidade);
         return this;
     }
+
+    public DAO<E> incluirAtomico(E entidade) {
+        em.persist(entidade);
+        return this;
+    }
     
 }
