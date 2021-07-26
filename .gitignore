@@ -211,3 +211,8 @@ hs_err_pid*
 target/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,java-web,code-java
+/exercicios-jpa.iml
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/.gitignore
