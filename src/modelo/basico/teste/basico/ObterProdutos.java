@@ -9,7 +9,11 @@ public class ObterProdutos {
 
     public static void main(String[] args) {
         ProdutoDAO dao = new ProdutoDAO();
-        List<Produto> produto = dao.obterTodos();
+        List<Produto> produtos = dao.obterTodos();
+
+        produtos.forEach(
+            p -> System.out.println("ID: " + p.getId() + ", Nome: " + p.getNome())
+        );
     }
     
 }
