@@ -14,6 +14,13 @@ public class ObterProdutos {
         produtos.forEach(
             p -> System.out.println("ID: " + p.getId() + ", Nome: " + p.getNome())
         );
+
+        Double precoTotal = produtos
+            .stream()
+            .map(p -> p.getPreco())
+            .reduce(0.0, (t, p) -> t + p)
+            .doubleValue();
+            System.out.println(precoTotal);
     }
     
 }
