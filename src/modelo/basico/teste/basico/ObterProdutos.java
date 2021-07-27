@@ -15,12 +15,12 @@ public class ObterProdutos {
             p -> System.out.println("ID: " + p.getId() + ", Nome: " + p.getNome())
         );
 
-        Double precoTotal = produtos
-            .stream()
+        System.out.println("O valor total é R$" +
+            produtos.stream()
             .map(p -> p.getPreco())
             .reduce(0.0, (t, p) -> t + p)
-            .doubleValue();
-            System.out.println(precoTotal);
+            .doubleValue()
+        );
+        dao.fechar();
     }
-    
 }
