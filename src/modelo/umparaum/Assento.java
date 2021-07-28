@@ -16,7 +16,7 @@ public class Assento {
 
     private String nome;
 
-    @OneToOne
+    @OneToOne(mappedBy = "assento")
     private Cliente cliente;
 
     public Cliente getCliente() {
