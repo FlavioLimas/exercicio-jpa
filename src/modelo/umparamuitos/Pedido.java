@@ -19,6 +19,7 @@ public class Pedido {
         this.data = data;
     }
     public Pedido() {
+        this(new Date());
     }
     public void setId(Long id) {
         this.id = id;
