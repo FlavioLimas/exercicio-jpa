@@ -22,8 +22,7 @@ public class Sobrinho {
     public Sobrinho() {
     }
 
-    public Sobrinho(Long id, String nome) {
-        this.id = id;
+    public Sobrinho(String nome) {
         this.nome = nome;
     }
 

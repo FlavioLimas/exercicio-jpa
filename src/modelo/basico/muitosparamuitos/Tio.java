@@ -22,8 +22,7 @@ public class Tio {
     public Tio() {
     }
 
-    public Tio(Long id, String nome) {
-        this.id = id;
+    public Tio(String nome) {
         this.nome = nome;
     }
 
