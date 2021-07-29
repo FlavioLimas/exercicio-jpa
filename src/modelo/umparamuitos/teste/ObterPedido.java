@@ -8,12 +8,12 @@ public class ObterPedido {
         DAO<Pedido> dao = new DAO<>(Pedido.class);
 
         Pedido pedido = dao.obterPorID(1L);
+        dao.fechar();
 
         pedido.getItens().forEach(i -> {
             System.out.println(i.getQuantidade());
             System.out.println(i.getProduto().getNome());
         });
 
-        dao.fechar();
     }
 }
