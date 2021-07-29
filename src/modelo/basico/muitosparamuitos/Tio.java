@@ -1,12 +1,13 @@
 package modelo.basico.muitosparamuitos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Tio {
@@ -15,8 +16,8 @@ public class Tio {
     private Long id;
     private String nome;
 
-    @OneToMany
-    private List<Sobrinho> sobrinhos;
+    @ManyToMany
+    private List<Sobrinho> sobrinhos = new ArrayList<>();
 
     public Tio() {
     }
