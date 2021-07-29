@@ -37,4 +37,11 @@ public class Pedido {
     public void setData(Date data) {
         this.data = data;
     }
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
 }
