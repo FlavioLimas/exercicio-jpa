@@ -12,6 +12,8 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Date data;
+    
     public Long getId() {
         return id;
     }
@@ -30,5 +32,4 @@ public class Pedido {
     public void setData(Date data) {
         this.data = data;
     }
-    private Date data;
 }
