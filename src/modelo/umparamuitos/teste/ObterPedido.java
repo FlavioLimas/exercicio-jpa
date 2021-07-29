@@ -6,11 +6,13 @@ import modelo.umparamuitos.Pedido;
 public class ObterPedido {
     public static void main(String[] args) {
         DAO<Pedido> dao = new DAO<>(Pedido.class);
-        
+
         Pedido pedido = dao.obterPorID(1L);
 
-        pedido.getItens()
-            .forEach(i -> System.out.println(i.getQuantidade()));
+        pedido.getItens().forEach(i -> {
+            System.out.println(i.getQuantidade());
+            System.out.println(i.getProduto().getNome());
+        });
 
         dao.fechar();
     }
