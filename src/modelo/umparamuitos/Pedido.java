@@ -17,7 +17,7 @@ public class Pedido {
     private Long id;
     private Date data;
     
-   @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY) 
+   @OneToMany(mappedBy = "pedido", fetch = FetchType.EAGER) 
     private List<ItemPedido> itens;
     
     public Long getId() {
