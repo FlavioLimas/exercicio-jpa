@@ -10,7 +10,7 @@ public class ObterPedido {
         Pedido pedido = dao.obterPorID(1L);
 
         pedido.getItens()
-            .forEach(i -> i.getQuantidade());
+            .forEach(i -> System.out.println(i.getQuantidade()));
 
         dao.fechar();
     }
