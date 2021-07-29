@@ -1,10 +1,12 @@
 package modelo.basico.muitosparamuitos;
 
-import javax.annotation.processing.Generated;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sobrinho {
@@ -12,6 +14,9 @@ public class Sobrinho {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
+    @OneToMany(mappedBy = "sobrinhos")
+    private List<Tio> tios;
 
     public Sobrinho() {
     }
@@ -35,6 +40,14 @@ public class Sobrinho {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Tio> getTios() {
+        return tios;
+    }
+
+    public void setTios(List<Tio> tios) {
+        this.tios = tios;
     }
     
 }
