@@ -1,11 +1,13 @@
 package modelo.umparamuitos;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Pedido {
@@ -13,6 +15,9 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date data;
+    
+   @OneToMany(mappedBy = "pedido") 
+    private List<ItemPedido> itens;
     
     public Long getId() {
         return id;
