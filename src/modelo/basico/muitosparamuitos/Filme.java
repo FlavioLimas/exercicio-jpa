@@ -3,6 +3,7 @@ package modelo.basico.muitosparamuitos;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,7 @@ public class Filme {
     private Long id;
     private String nome;
     private Double nota;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
         name = "atores_filmes", 
         joinColumns = @JoinColumn(name = "filme_id", referencedColumnName = "id"),
