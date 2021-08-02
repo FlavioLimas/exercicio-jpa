@@ -7,6 +7,7 @@ import modelo.basico.muitosparamuitos.Filme;
 public class NovoFilmeAtor {
     public static void main(String[] args) {
         Filme anjosEDemonios = new Filme("Anjos E Demonios", 10.);
+        Filme inferno = new Filme("Inferno", 8.9);
         Filme avatar = new Filme("Avatar", 10.);
 
         Ator tomHankis = new Ator("Tom Hanks");
@@ -20,8 +21,8 @@ public class NovoFilmeAtor {
 
         avatar.addAtor(samWorthington);
         avatar.addAtor(zoeSaldana);
-
+        inferno.addAtor(tomHankis);
         DAO<Filme> dao = new DAO<Filme>();
-        dao.incluirAtomico(anjosEDemonios);
+        dao.incluirAtomico(inferno);
     }
 }
