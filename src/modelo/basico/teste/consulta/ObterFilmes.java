@@ -11,7 +11,10 @@ public class ObterFilmes {
         List<Filme> filmes = dao.consultas(
             "obterFilmesNotaMaiorQue", "nota", 8.5);
         filmes.forEach(filme -> {
-                System.out.println(filme.getNome());
+                System.out.println(filme.getNome() + " => " + filme.getNota());
+                filme.getAtores().forEach(ator -> {
+                    System.out.println(ator.getNome());
+                });
             });
     }
 }
