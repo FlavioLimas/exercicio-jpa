@@ -15,7 +15,7 @@ public class DAO<E> {
 
     static {
         try {
-             emf = Persistence.createEntityManagerFactory("exercicios-jpa");
+            emf = Persistence.createEntityManagerFactory("curso_java");
         } catch (Exception e) {
             // logar -> log4j
         }
@@ -74,7 +74,7 @@ public class DAO<E> {
         return query.getResultList();
     }
 
-    public List<E> consultas(String nomeConsulta, Object... params) {
+    public List<E> consultar(String nomeConsulta, Object... params) {
         TypedQuery<E> query = em.createNamedQuery(nomeConsulta, classe);
 
         for (int i = 0; i < params.length; i += 2) {
@@ -82,6 +82,11 @@ public class DAO<E> {
         }
 
         return query.getResultList();
+    }
+
+    public E consultarUm(String nomeConsulta, Object... params) {
+        List<E> lista = consultar(nomeConsulta, params);
+        return lista.isEmpty() ? null : lista.get(0);
     }
 
     public void fechar() {
