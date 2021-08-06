@@ -1,11 +1,8 @@
 package infra.modelo.heranca;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class AlunoBolsista extends Aluno {
     
     private double valorBolsa;
